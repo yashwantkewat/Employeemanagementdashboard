@@ -1,0 +1,134 @@
+.app {
+  background: linear-gradient(135deg, #0f0c29, #302b63, #080810);
+  color: white;
+}
+body{
+  background: linear-gradient(135deg, #4d4b66, #534baf, #080810);
+}
+/* General Navbar styles */
+.navbar {
+  background: linear-gradient(135deg, #4d4b66, #534baf, #080810);
+  position: fixed !important;  
+  top: 0; /* Stick to the top */
+  width: 100%;
+  padding: 10px;
+  display: flex; /* Enable flexbox */
+  justify-content: space-between; /* Space elements evenly */
+  align-items: center; /* Center items vertically */
+  z-index: 30; /* Keep it above other elements */
+}
+
+
+
+/* Sidebar styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #080810);
+  transition: transform 0.3s ease;
+  transform: translateX(-100%);
+  z-index: 20; /* Ensure the sidebar is above the content but below the navbar */
+  padding-top: 50px; /* Make space for the navbar */
+}
+
+.sidebar-open {
+  transform: translateX(0);
+}
+
+.sidebar-list {
+  padding: 20px;
+}
+
+.sidebar-item {
+  padding: 12px 0;
+}
+
+.sidebar-item:hover {
+  background-color: #6e5e5e;
+}
+
+.sidebar-link {
+  text-decoration: none;
+  color: white;
+  font-size: 1.1rem;
+}
+
+/* Overlay to close the sidebar */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  display: none; /* Default to hidden */
+}
+
+.overlay-active {
+  display: block; /* Show overlay when sidebar is open */
+}
+
+/* Main content adjustment */
+.content-wrapper {
+  margin-left: 0; /* Default margin */
+  transition: margin-left 0.3s ease; /* Smooth transition for margin adjustment */
+}
+
+.sidebar-open ~ .content-wrapper {
+  margin-left: 250px; /* Adjust margin when sidebar is open */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px; /* Adjust sidebar width for smaller screens */
+  }
+
+  .sidebar-open ~ .content-wrapper {
+    margin-left: 200px; /* Adjust margin for smaller screens */
+  }
+
+  .navbar h1 {
+    font-size: 1.2rem; /* Smaller font for navbar title */
+  }
+
+  .sidebar-link {
+    font-size: 1rem; /* Smaller font for sidebar links */
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar {
+    padding: 5px; /* Reduce navbar padding for very small screens */
+  }
+
+  .sidebar {
+    width: 40%; /* Full width for the sidebar on very small screens */
+  }
+
+  .sidebar-open ~ .content-wrapper {
+    margin-left: 100px; /* Adjust margin for smaller screens */
+  }
+
+  .sidebar-link {
+    font-size: 0.9rem; /* Further reduce font size for small screens */
+  }
+}
+
+
+.add-employee-button {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color:#F5F5F5;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  color: rgb(18, 13, 13);
+}
+
+.add-employee-button:hover {
+  transform: translateY(-2px);
+}
